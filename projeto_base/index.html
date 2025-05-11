@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="univespApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protótipo AngularJS - Clientes Univesp</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="app.js"></script>
+</head>
+<body>
+  <div ng-controller="ClienteController">
+    <h1>Clientes Univesp</h1>
+    <ul>
+      <li ng-repeat="cliente in clientes">
+        <strong>Nome:</strong> {{cliente.nome}}<br>
+        <strong>Email:</strong> {{cliente.email}}<br>
+        <strong>Telefone:</strong> {{cliente.telefone}}<br>
+        <strong>Data de Nascimento:</strong> {{cliente.data_nascimento}}<br>
+        <strong>Data de Cadastro:</strong> {{cliente.data_cadastro}}
+        <hr>
+      </li>
+    </ul>
+    <div ng-if="erro" style="color: red;">
+      {{mensagemErro}}
+    </div>
+  </div>
+</body>
+</html>

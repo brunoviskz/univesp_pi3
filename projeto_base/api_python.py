@@ -1,9 +1,11 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
 import psycopg2
 from psycopg2.extras import RealDictCursor
 from config import DB_PASSWORD
 
 app = Flask(__name__)
+CORS(app)  # Habilita CORS para todos os endpoints
 
 
 def get_db_connection(host, port, database, user, password):
@@ -19,7 +21,6 @@ def get_db_connection(host, port, database, user, password):
 
 @app.route("/clientes-univesp", methods=["GET"])
 def get_clientes():
-    # Replace these with your actual database parameters
     host = "dpg-d0ged83uibrs73fi0sjg-a.oregon-postgres.render.com"
     port = "5432"
     database = "univesp"
@@ -44,4 +45,4 @@ def get_clientes():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(port=5000, debug=True)
