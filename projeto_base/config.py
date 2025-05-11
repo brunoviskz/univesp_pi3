@@ -1,0 +1,2 @@
+def DB_PASSWORD():
+    return "5D6E0HOy9dctBV5GQHKPt0p2TTrgHDuP"
